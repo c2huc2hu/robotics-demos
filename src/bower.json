@@ -1,0 +1,24 @@
+{
+  "name": "pset3",
+  "authors": [
+    "c2huc2hu <c2huc2hu@gmail.com>"
+  ],
+  "description": "various robotics demos",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "c2huc2hu.github.io/robotics-demos",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "FastPriorityQueue.js": "https://github.com/lemire/FastPriorityQueue.js.git",
+    "jquery": "^3.1.1",
+    "chart.js": "^2.4.0",
+    "lodash": "^4.16.6"
+  }
+}
