@@ -1,14 +1,18 @@
 // specific to this case
 let e = 0.0001 // epsilon to pull all the points in a bit
-obstacleList = [
+let obstacleList = [
 	{x1: 11+e, y1: 11+e, x2: 13-e, y2: 11+e},
 	{x1: 13-e, y1: 11+e, x2: 13-e, y2: 14-e},
 	{x1: 13-e, y1: 14-e, x2: 11+e, y2: 12-e},
 	{x1: 11+e, y1: 12-e, x2: 11+e, y2: 11+e},
 	{x1: 9, y1: 0, x2: 4, y2: 9} // ...
 ]
-var N = 35;
-let grid = dijkstra(2, 2, 32, 32, obstacleList, N);
+let N = 35;
+// let grid = dijkstra(2,2,32,32,obstacleList,N);
+let grid = astar(2,2,32,32,obstacleList,N, function(nextX, nextY, targetX, targetY){
+	let dx = Math.abs(targetX - nextX), dy = Math.abs(targetY - nextY);
+	return Math.sqrt(2) * Math.abs(dy - dx) + Math.min(dx, dy);
+})
 
 function drawObstacles(ctx, obstacleList) {
 	ctx.beginPath();
@@ -40,7 +44,7 @@ function drawPaths(ctx, grid) {
 
 $(function() {
 	var ctx = $('#obstacle-map').get(0).getContext('2d');
-
 	drawObstacles(ctx, obstacleList);
 	drawPaths(ctx, grid);
+	console.log("done rendeirng")
 })
