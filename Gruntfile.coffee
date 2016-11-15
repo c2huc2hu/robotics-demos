@@ -16,9 +16,10 @@ module.exports = (grunt) ->
 				rename: (dest, src) ->
 					dest + path.basename(src)
 			fastpq:
+				expand: true
 				cwd: 'bower_components/FastPriorityQueue.js'
 				src: 'FastPriorityQueue.js'
-				dest: 'dist/'
+				dest: 'dist/lib/'
 		jade:
 			compile:
 				cwd: 'src'
@@ -32,9 +33,15 @@ module.exports = (grunt) ->
 					port: 8000
 					base: 'dist/'
 					keepalive: true
+		watch:
+			main:
+				files: ['src/*.js', 'src/*.jade']
+				tasks: ['copy:main', 'jade:compile']
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-connect');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask 'default', ['copy:main', 'copy:dependencies', 'copy:fastpq', 'jade:compile', 'connect:server']
+	grunt.registerTask 'compile', ['copy:main', 'copy:dependencies', 'copy:fastpq', 'jade:compile', 'connect:server']
+	grunt.registerTask 'default', ['watch:main']
