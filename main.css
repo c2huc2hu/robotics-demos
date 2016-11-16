@@ -1,0 +1,49 @@
+* {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+body {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+	width: 60%;
+	margin: auto;
+	position: relative;
+	margin-bottom: 5px;
+}
+
+#top-container {
+	height: 100px;
+	position: relative;
+	display: flex;
+}
+
+.column {
+	flex: 1 0 0;
+	display: inline-block;
+	vertical-align: top;
+	padding: 15px;
+	border-left: solid 1px darkgrey;
+	border-right: solid 1px darkgrey;
+}
+
+.chart-container {
+	margin: auto;
+	height: 400px;
+}
+
+#obstacle-map {
+	text-align: center;
+	border: solid 2px navy;
+}
+
+button {
+	padding: 2px;
+	margin-right: 10px;
+}
