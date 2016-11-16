@@ -1,0 +1,27 @@
+head
+	link(href='./main.css', rel='stylesheet')
+	script(src='./lib/lodash.min.js')
+	script(src='./lib/jquery.min.js')
+	script(src='./lib/Chart.min.js')
+	script(src='./kalmanFiltering.js')
+	script(src='./renderKF.js')
+
+	title Kalman Filtering Demo
+
+.container#top-container
+	.column#input
+		label
+			span Control/ Sensor Noise:
+			input#noise(value=0)
+		br
+		label
+			span Enable Kalman Filtering
+			input#toggle-kf(type='checkbox', checked)
+		br
+		button#reset Reset
+
+	.column#output
+		#output-panel
+
+.container.chart-container
+	canvas#graph

@@ -1,27 +1,16 @@
 head
 	link(href='./main.css', rel='stylesheet')
-	script(src='./lib/lodash.min.js')
-	script(src='./lib/jquery.min.js')
-	script(src='./lib/Chart.min.js')
-	script(src='./kalmanFiltering.js')
-	script(src='./renderKF.js')
+	title Robotics Demos
 
-	title Kalman Filtering Demo
 
-.container#top-container
-	.column#input
-		label
-			span Control/ Sensor Noise:
-			input#noise(value=0)
-		br
-		label
-			span Enable Kalman Filtering
-			input#toggle-kf(type='checkbox', checked)
-		br
-		button#reset Reset
+.container
+	h1 Some Robotics Demos
+	li
+		a(href='./kalmanfiltering.html') Kalman filtering
+	li
+		a(href='./pathfinding.html') Pathfinding (A* and Dijkstra)
 
-	.column#output
-		#output-panel
+	br
 
-.container.chart-container
-	canvas#graph
+	span Source code:&nbsp;
+	a(href='https://github.com/c2huc2hu/robotics-demos') Github

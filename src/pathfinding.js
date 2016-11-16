@@ -1,3 +1,5 @@
+// Pathfinding algorithms (Dijkstra and A*)
+
 // Modified version of http://stackoverflow.com/a/1968345/3080953 (detecting intersections between line segments)
 // handle case when det is zero, also don't return the intersection because we don't care
 function getLineIntersection(p0_x, p0_y, p1_x, p1_y, p2_x, p2_y, p3_x, p3_y) {
