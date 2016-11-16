@@ -42,14 +42,16 @@ function astar(startX, startY, targetX, targetY, obstacleList, N, heuristic) {
 
 	while (!pq.isEmpty()) {
 		let curCell = pq.poll()
-		if(curCell.x === targetX && curCell.y === targetY)
-			return result; // found optimal path
 		if(curCell.dist >= result[curCell.x][curCell.y].dist) {
 			continue; // worse candidate than what we currently have
 		}
 		result[curCell.x][curCell.y].dist = curCell.dist;
 		result[curCell.x][curCell.y].parentX = curCell.parentX;
 		result[curCell.x][curCell.y].parentY = curCell.parentY;
+
+		if(curCell.x === targetX && curCell.y === targetY){
+			return result; // found optimal path
+		}
 
 		for (let neigh of neighbours) {
 			// do another check so we don't add more stuff than necessary to the queue,

@@ -6,7 +6,7 @@ module.exports = (grunt) ->
 			main:
 				expand: true
 				cwd: 'src'
-				src: '**.js'
+				src: ['**.js', '**.css']
 				dest: 'dist/'
 			dependencies:
 				expand: true
@@ -35,7 +35,7 @@ module.exports = (grunt) ->
 					keepalive: true
 		watch:
 			main:
-				files: ['src/*.js', 'src/*.jade']
+				files: ['src/*.js', 'src/*.jade', 'src/*.css']
 				tasks: ['copy:main', 'jade:compile']
 
 	grunt.loadNpmTasks('grunt-contrib-copy');

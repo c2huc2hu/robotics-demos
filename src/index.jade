@@ -1,52 +1,8 @@
-//- script(src='./pathfinding.js')
-//- script(src='./fabric.js')
-//- script(src='./bower_components/FastPriorityQueue/FastPriorityQueue.js')
-//- script(src='main.js')
-style.
-	body{
-	    -webkit-touch-callout: none;
-	    -webkit-user-select: none;
-	    -khtml-user-select: none;
-	    -moz-user-select: none;
-	    -ms-user-select: none;
-	    user-select: none;
-	}
-
-	.container {
-		width: 80%;
-		margin: auto;
-		position: relative;
-	}
-
-	#top-container {
-		height: 200px;
-		position: relative;
-		display: flex;
-	}
-
-	.column {
-		flex: 1 0 0;
-		display: inline-block;
-		vertical-align: top;
-		padding: 15px;
-		border-left: solid 1px darkgrey;
-		border-right: solid 1px darkgrey;
-	}
-
-	.chart-container {
-		margin: auto;
-		height: 400px;
-	}
-
-	button {
-		padding: 2px;
-		margin-right: 10px;
-	}
-
 head
-	script(src='../bower_components/lodash/dist/lodash.min.js')
-	script(src='../bower_components/jquery/dist/jquery.min.js')
-	script(src='../bower_components/chart.js/dist/Chart.min.js')
+	link(href='./main.css', rel='stylesheet')
+	script(src='./lib/lodash.min.js')
+	script(src='./lib/jquery.min.js')
+	script(src='./lib/Chart.min.js')
 	script(src='./kalmanFiltering.js')
 	script(src='./renderKF.js')
 
@@ -58,14 +14,14 @@ head
 			span Control/ Sensor Noise:
 			input#noise(value=0)
 		br
-		label Enable Kalman Filtering
+		label
+			span Enable Kalman Filtering
 			input#toggle-kf(type='checkbox', checked)
 		br
 		button#reset Reset
 
 	.column#output
 		#output-panel
-			| text
 
 .container.chart-container
 	canvas#graph

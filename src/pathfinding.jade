@@ -1,11 +1,30 @@
-script(src='./lib/lodash.min.js')
-script(src='./lib/jquery.min.js')
-script(src='./lib/FastPriorityQueue.js')
-script(src='./pathfinding.js')
-script(src='./renderDijkstra.js')
+head
+	link(href='./main.css', rel='stylesheet')
+	script(src='./lib/lodash.min.js')
+	script(src='./lib/jquery.min.js')
+	script(src='./lib/FastPriorityQueue.js')
+	script(src='./pathfinding.js')
+	script(src='./renderDijkstra.js')
 
-style.
-	canvas {
-		border: solid 1px black
-	}
-canvas(width=340, height=340)#obstacle-map
+	title Pathfinding Demo
+
+.container#top-container
+	.column#input
+		span Pathfinding Method:
+
+		label(for='dijkstra')
+			input#dijkstra(type='radio', name='pathfinding-method' value='Dijkstra' checked)
+			| Dijkstra
+		label(for='astar')
+			input#astar(type='radio', name='pathfinding-method' value='A*')
+			| A*
+
+		br
+		button#reset Reset
+
+	.column#output
+		#output-panel
+
+.container
+	canvas(width=340, height=340)#obstacle-map
+
